@@ -4,6 +4,7 @@ from langchain import hub
 from langchain_google_genai import ChatGoogleGenerativeAI
 from tools.tools import get_profile_url
 
+
 def lookup(name: str) -> str:
     llm = ChatGoogleGenerativeAI(model="gemini-pro")
 

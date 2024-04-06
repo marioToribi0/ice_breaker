@@ -1,5 +1,6 @@
 from langchain.serpapi import SerpAPIWrapper
 
+
 class CustomSerpAPIWrapper(SerpAPIWrapper):
     def __init__(self):
         super(CustomSerpAPIWrapper, self).__init__()
@@ -35,9 +36,9 @@ class CustomSerpAPIWrapper(SerpAPIWrapper):
             toret = "No good search result found"
         return toret
 
+
 def get_profile_url(name: str) -> str:
-    """Realize search on google. Search a phrase o text to search on the browser
-    """
+    """Realize search on google. Search a phrase o text to search on the browser"""
     search = CustomSerpAPIWrapper()
     response = search.run(f"{name}")
     return f"{response}"

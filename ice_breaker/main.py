@@ -35,7 +35,7 @@ async def generate_response(model, information):
 
 async def main():
     linkedin_profile_url = linkedin_lookup_agent(name="Carlos Barranco AFP Crecer")
-    
+
     information = scrape_linkedin_profile(
         # linkedin_profile_url="https://www.linkedin.com/in/mario-t-3538aa205/"
         linkedin_profile_url=linkedin_profile_url
