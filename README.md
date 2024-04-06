@@ -46,7 +46,8 @@
 
 ## :dart: About ##
 
-Ice Breaker based on Langchain
+Ice Breaker based on Langchain. This project is my version from the presented on the course <a href="https://www.udemy.com/course/langchain/">LangChain- Develop LLM powered applications with LangChain<\a>
+
 
 ## :white_check_mark: Requirements ##
 
