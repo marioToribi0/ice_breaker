@@ -43,8 +43,8 @@ def scrape_linkedin_profile(linkedin_profile_url: str):
         "accomplishment_honors_awards",
         "certifications",
     ]
-    response = {k:v for k,v in response.items() if k in data}
-    
+    response = {k: v for k, v in response.items() if k in data}
+
     return response
 
 

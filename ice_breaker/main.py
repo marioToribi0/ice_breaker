@@ -1,9 +1,12 @@
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
+
+# from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableSequence
 from third_parties.linkedin import scrape_linkedin_profile
+from agents.linkedin_lookup_agent import lookup as linkedin_lookup_agent
 import asyncio
 
 
@@ -20,6 +23,7 @@ async def create_model():
     output_parser = StrOutputParser()
 
     llm = ChatGoogleGenerativeAI(model="gemini-pro")
+    # llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0, streaming=True)
     chain = summary_prompt_template | llm | output_parser
     return chain
 
@@ -30,10 +34,12 @@ async def generate_response(model, information):
 
 
 async def main():
-    information = scrape_linkedin_profile(
-        linkedin_profile_url="https://www.linkedin.com/in/mario-t-3538aa205/"
-    )
+    linkedin_profile_url = linkedin_lookup_agent(name="Carlos Barranco AFP Crecer")
     
+    information = scrape_linkedin_profile(
+        # linkedin_profile_url="https://www.linkedin.com/in/mario-t-3538aa205/"
+        linkedin_profile_url=linkedin_profile_url
+    )
     model: RunnableSequence = await create_model()
 
     # response = model.invoke(input={"information": information})
@@ -44,5 +50,7 @@ async def main():
 if __name__ == "__main__":
     load_dotenv()
     print("Hello Langchain")
+    print("AIzaSyAPtbvlz-NW44n0MF6PebHYUlwJtTjywfo")
 
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     asyncio.run(main())
