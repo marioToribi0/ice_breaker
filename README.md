@@ -6,7 +6,7 @@
   <!-- <a href="https://ice_breaker.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Ice_breaker</h1>
+<h1 align="center">Ice Breaker</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/mariotoribi0/ice_breaker?color=56BEB8">
