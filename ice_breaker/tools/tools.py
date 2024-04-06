@@ -1,6 +1,5 @@
 from langchain.serpapi import SerpAPIWrapper
 
-
 class CustomSerpAPIWrapper(SerpAPIWrapper):
     def __init__(self):
         super(CustomSerpAPIWrapper, self).__init__()
@@ -38,6 +37,12 @@ class CustomSerpAPIWrapper(SerpAPIWrapper):
 
 
 def get_profile_url(name: str) -> str:
+    """Realize search on google. Search a phrase o text to search on the browser"""
+    search = CustomSerpAPIWrapper()
+    response = search.run(f"{name}")
+    return f"{response}"
+
+def get_profile_url_duck(name: str) -> str:
     """Realize search on google. Search a phrase o text to search on the browser"""
     search = CustomSerpAPIWrapper()
     response = search.run(f"{name}")
