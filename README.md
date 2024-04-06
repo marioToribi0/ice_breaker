@@ -46,23 +46,7 @@
 
 ## :dart: About ##
 
-Describe your project
-
-## :sparkles: Features ##
-
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
-
-## :rocket: Technologies ##
-
-The following tools were used in this project:
-
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+Ice Breaker based on Langchain
 
 ## :white_check_mark: Requirements ##
 
@@ -78,12 +62,12 @@ $ git clone https://github.com/mariotoribi0/ice_breaker
 $ cd ice_breaker
 
 # Install dependencies
-$ yarn
+$ docker build -t ice_breaker .
 
 # Run the project
-$ yarn start
+$ docker run -p 80:80 ice_breaker .
 
-# The server will initialize in the <http://localhost:3000>
+# The server will initialize in the <http://localhost:80>
 ```
 
 ## :memo: License ##
